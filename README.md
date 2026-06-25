@@ -1,5 +1,6 @@
 # md-clean
 
+[![CI](https://github.com/dcz6360/md-clean/actions/workflows/ci.yml/badge.svg)](https://github.com/dcz6360/md-clean/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.9+-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Status](https://img.shields.io/badge/status-WIP-orange)
@@ -8,6 +9,10 @@
 > 粘贴一个文章链接，得到一份干净、可阅读的 Markdown —— 或者一本可直接放进电子书阅读器的 EPUB。
 
 `md-clean` 是一个命令行工具：给定任意文章 URL，它会抓取网页正文，自动剥离广告、cookie 横幅、导航与追踪脚本，并在 Markdown 顶部附加元信息头（来源 URL、抓取日期、标题、作者），可选导出为 EPUB。
+
+仓库地址：[https://github.com/dcz6360/md-clean](https://github.com/dcz6360/md-clean)
+
+English documentation: [README.en.md](./README.en.md)
 
 ## 特性
 
@@ -125,8 +130,19 @@ md-clean/
 ├── conftest.py          # 让测试在未安装时也能导入 src 包
 ├── pyproject.toml
 ├── requirements.txt
+├── .github/workflows/ci.yml
+├── CONTRIBUTING.md
+├── README.en.md
 ├── README.md
 └── LICENSE
+```
+
+## 贡献
+
+欢迎提交 Issue 和 Pull Request。请先阅读 [CONTRIBUTING.md](./CONTRIBUTING.md)，并在提交前运行测试：
+
+```bash
+python -m pytest tests/ -q
 ```
 
 ## 已知限制
