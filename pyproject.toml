@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "md-clean"
+version = "0.1.0"
+description = "抓取网页文章并输出干净的 Markdown / EPUB，自动剥离广告、cookie 横幅与追踪脚本。"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "md-clean contributors" }]
+keywords = ["markdown", "epub", "web-scraper", "trafilatura", "cli", "reader"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Text Processing :: Markup :: Markdown",
+]
+dependencies = [
+    "trafilatura>=1.6.0",
+    "markdownify>=0.11.0",
+    "rich>=13.0.0",
+]
+
+[project.scripts]
+md-clean = "md_clean.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/md-clean/md-clean"
+Repository = "https://github.com/md-clean/md-clean"
+Issues = "https://github.com/md-clean/md-clean/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
